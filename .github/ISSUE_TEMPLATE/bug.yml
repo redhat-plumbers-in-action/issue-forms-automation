@@ -39,21 +39,12 @@ body:
       description: |
         Linux kernel version used (`uname -a`)
         Make sure to enclose the pasted kernel version in `backticks`, so that GitHub doesn't convert the `#` character typically included in it into a reference to old GitHub issues.
-      placeholder: Fedora 37
-    validations:
-      required: true
-
-  - type: input
-    id: kernel
-    attributes:
-      label: Linux kernel
-      description: Linux kernel version used (`uname -a`)
-      placeholder: Fedora 37
+      placeholder: 5.17.12-300.fc36.ppc64le
     validations:
       required: true
 
   - type: dropdown
-    id: version
+    id: architecture
     attributes:
       label: Architecture
       description: CPU architecture issue was seen on
