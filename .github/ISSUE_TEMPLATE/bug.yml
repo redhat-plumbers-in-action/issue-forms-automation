@@ -33,8 +33,9 @@ body:
   - type: input
     id: kernel
     attributes:
-      label: Linux kernel version used (`uname -a`)
+      label: Linux kernel version used
       description: |
+        Please use `uname -a` to get linux kernel version.
         Make sure to enclose the pasted kernel version in `backticks`, so that GitHub doesn't convert the `#` character typically included in it into a reference to old GitHub issues.
       placeholder: 5.17.12-300.fc36.ppc64le
     validations:
@@ -79,14 +80,13 @@ body:
     attributes:
       label: Additional program output to the terminal or log subsystem illustrating the issue
       description: |
-        This will be automatically formatted into code, so no need for backticks.
-      placeholder: |
         Please paste relevant program terminal or journal output here, ideally
         when generated in debug mode (try setting the SYSTEMD_LOG_LEVEL=debug
         environment variable). For very long copy/pasted data consider using a
         service like https://gist.github.com/. Where copy/paste is not possible
         (for example early boot or late shutdown), a photo of the screen might do
         too, but text is always much preferred.
+      placeholder: This will be automatically formatted into code, so no need for backticks.        
       render: sh
     validations:
       required: false
