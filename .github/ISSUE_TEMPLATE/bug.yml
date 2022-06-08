@@ -53,6 +53,26 @@ body:
         - x86_64
     validations:
       required: false
+      
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Please chose component related to this issue.
+      multiple: true
+      options:
+        - systemd
+        - resolve
+        - journal
+        - network
+        - systemdctl
+        - udev
+        - login
+        - nspawn
+        - boot
+        - homed
+    validations:
+      required: true
 
   - type: textarea
     id: expected-behaviour
