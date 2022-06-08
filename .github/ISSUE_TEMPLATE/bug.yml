@@ -1,6 +1,5 @@
 name: Bug Report
 description: A report of an error in a recent systemd version
-title: "[Bug]: "
 labels: ["bug 🐛"]
 body:
   - type: markdown
@@ -11,9 +10,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Version
+      label: systemd version the issue has been seen with
       description: |
-        Systemd version the issue has been seen with
         Do not submit bug reports about anything but the two most recently released *major* systemd versions upstream!
         If there have been multiple stable releases for that major version, please consider updating to a recent one before reporting an issue.
         When using a distro package, please make sure that the version reported is meaningful for upstream.
@@ -26,7 +24,7 @@ body:
   - type: input
     id: distro
     attributes:
-      label: Distribution
+      label: Used distribution
       description: Used distribution and it's version
       placeholder: Fedora 37
     validations:
@@ -35,9 +33,8 @@ body:
   - type: input
     id: kernel
     attributes:
-      label: Linux kernel
+      label: Linux kernel version used (`uname -a`)
       description: |
-        Linux kernel version used (`uname -a`)
         Make sure to enclose the pasted kernel version in `backticks`, so that GitHub doesn't convert the `#` character typically included in it into a reference to old GitHub issues.
       placeholder: 5.17.12-300.fc36.ppc64le
     validations:
@@ -46,8 +43,7 @@ body:
   - type: dropdown
     id: architecture
     attributes:
-      label: Architecture
-      description: CPU architecture issue was seen on
+      label: CPU architecture issue was seen on
       options:
         - aarch64
         - i686
@@ -60,33 +56,29 @@ body:
   - type: textarea
     id: expected-behaviour
     attributes:
-      label: What is expected?
-      description: Expected behaviour you didn't see
+      label: Expected behaviour you didn't see
     validations:
       required: true
 
   - type: textarea
     id: unexpected-behaviour
     attributes:
-      label: What happened?
-      description: Unexpected behaviour you saw
+      label: Unexpected behaviour you saw
     validations:
       required: true
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: Steps to reproduce
-      description: Steps to reproduce the problem
+      label: Steps to reproduce the problem
     validations:
       required: true
 
   - type: textarea
     id: additional-information
     attributes:
-      label: Additional information
+      label: Additional program output to the terminal or log subsystem illustrating the issue
       description: |
-        Additional program output to the terminal or log subsystem illustrating the issue.
         This will be automatically formatted into code, so no need for backticks.
       placeholder: |
         Please paste relevant program terminal or journal output here, ideally
@@ -95,7 +87,7 @@ body:
         service like https://gist.github.com/. Where copy/paste is not possible
         (for example early boot or late shutdown), a photo of the screen might do
         too, but text is always much preferred.
-      render: shell
+      render: sh
     validations:
       required: false
       
