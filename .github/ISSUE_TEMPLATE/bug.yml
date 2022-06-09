@@ -72,7 +72,7 @@ body:
         - boot
         - homed
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected-behaviour
