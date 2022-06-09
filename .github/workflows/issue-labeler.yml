@@ -5,7 +5,7 @@
 name: Issue labeler
 on:
   issues:
-    types: opened
+    types: [ opened ]
 
 jobs:
   label-component:
@@ -23,11 +23,8 @@ jobs:
         with:
           template-path: .github/ISSUE_TEMPLATE/bug.yml
 
-      - run: echo '${{ steps.issue-parser.outputs.jsonString }}' > bug.json
-
-      - run: cat bug.json
-
       - name: Set labels based on component field
-        users: redhat-plumbers-in-action/advanced-issue-labeler@v1
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@v0.1.0
         with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
           field: component
