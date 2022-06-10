@@ -10,6 +10,11 @@ on:
 jobs:
   label-component:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        template: [ bug.yml, feature.yml ]
+
     steps:
       - uses: actions/checkout@v3
 
@@ -21,7 +26,7 @@ jobs:
         uses: stefanbuck/github-issue-praser@v2
         id: issue-parser
         with:
-          template-path: .github/ISSUE_TEMPLATE/bug.yml
+          template-path: .github/ISSUE_TEMPLATE/${{ matrix.template }}
 
       - name: Set labels based on component field
         uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
