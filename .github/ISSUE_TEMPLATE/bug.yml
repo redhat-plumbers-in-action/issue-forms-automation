@@ -1,11 +1,11 @@
 name: Bug Report
 description: A report of an error in a recent systemd version
 labels: ["bug 🐛"]
+
 body:
   - type: markdown
     attributes:
-      value: |
-        Thanks for taking the time to fill out this bug report!
+      value: Thanks for taking the time to fill out this bug report!
         
   - type: input
     id: version
@@ -28,7 +28,7 @@ body:
       description: Used distribution and it's version
       placeholder: Fedora 37
     validations:
-      required: true
+      required: false
   
   - type: input
     id: kernel
@@ -39,7 +39,7 @@ body:
         Make sure to enclose the pasted kernel version in `backticks`, so that GitHub doesn't convert the `#` character typically included in it into a reference to old GitHub issues.
       placeholder: 5.17.12-300.fc36.ppc64le
     validations:
-      required: true
+      required: false
 
   - type: dropdown
     id: architecture
@@ -79,21 +79,21 @@ body:
     attributes:
       label: Expected behaviour you didn't see
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: unexpected-behaviour
     attributes:
       label: Unexpected behaviour you saw
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: steps-to-reproduce
     attributes:
       label: Steps to reproduce the problem
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: additional-information
@@ -106,12 +106,3 @@ body:
       render: sh
     validations:
       required: false
-      
-  - type: checkboxes
-    id: terms
-    attributes:
-      label: Code of Conduct
-      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
-      options:
-        - label: I agree to follow this project's Code of Conduct
-          required: true
