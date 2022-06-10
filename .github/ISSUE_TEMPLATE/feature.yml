@@ -1,0 +1,62 @@
+
+name: Feature request
+description: Suggest an improvement
+labels: ["RFE 🎁"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this feature request!
+      
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Please chose component related to this feature request.
+      multiple: true
+      options:
+        - systemd
+        - resolve
+        - journal
+        - network
+        - systemdctl
+        - udev
+        - login
+        - nspawn
+        - boot
+        - homed
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Is your feature request related to a problem? Please describe
+      description: A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+    validations:
+      required: false
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Describe the solution you'd like
+      description: A clear and concise description of what you want to happen.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Describe alternatives you've considered
+      description: A clear and concise description of any alternative solutions or features you've considered.
+    validations:
+      required: false
+
+  - type: input
+    id: version
+    attributes:
+      label: The systemd version you checked that didn't have the feature you are asking for
+      description: If this is not the most recently released upstream version, then please check first if it has that feature already.
+      placeholder: v251
+    validations:
+      required: false
