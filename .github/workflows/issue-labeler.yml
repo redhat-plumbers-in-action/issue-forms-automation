@@ -33,4 +33,6 @@ jobs:
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
           section: component
+          block-list: |
+            other
           token: ${{ secrets.GITHUB_TOKEN }}
