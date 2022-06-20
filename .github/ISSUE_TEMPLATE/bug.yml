@@ -82,6 +82,7 @@ body:
         - nspawn
         - boot
         - homed
+        - other
     validations:
       required: false
 
