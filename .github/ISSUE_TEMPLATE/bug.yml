@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: Thanks for taking the time to fill out this bug report!
-        
+
   - type: input
     id: version
     attributes:
@@ -15,28 +15,28 @@ body:
         Do not submit bug reports about anything but the two most recently released *major* systemd versions upstream!
         If there have been multiple stable releases for that major version, please consider updating to a recent one before reporting an issue.
         When using a distro package, please make sure that the version reported is meaningful for upstream.
+        If a distro build is used, please just paste the package version, e.g. `systemd-250.7-1.fc36.x86_64`.
         See https://github.com/systemd/systemd-stable/tags for the list of most recent releases.
         For older version please use distribution trackers (see https://systemd.io/CONTRIBUTING#filing-issues).
-      placeholder: v251
+      placeholder: '251'
     validations:
       required: true
-    
+
   - type: input
     id: distro
     attributes:
       label: Used distribution
       description: Used distribution and it's version
-      placeholder: Fedora 37
+      placeholder: Fedora 36
     validations:
       required: false
-  
+
   - type: input
     id: kernel
     attributes:
       label: Linux kernel version used
       description: |
-        Please use `uname -a` to get linux kernel version.
-        Make sure to enclose the pasted kernel version in `backticks`, so that GitHub doesn't convert the `#` character typically included in it into a reference to old GitHub issues.
+        Please use `uname -r` to get linux kernel version.
       placeholder: 5.17.12-300.fc36.ppc64le
     validations:
       required: false
@@ -51,9 +51,20 @@ body:
         - ppc64le
         - s390x
         - x86_64
+        - alpha
+        - arm
+        - ia64
+        - loongarch
+        - mips
+        - parisc
+        - ppc (big endian)
+        - ppc64 (big endian)
+        - riscv64
+        - sparc
+        - sparc64
     validations:
       required: false
-      
+
   - type: dropdown
     id: component
     attributes:
@@ -65,7 +76,7 @@ body:
         - resolve
         - journal
         - network
-        - systemdctl
+        - systemctl
         - udev
         - login
         - nspawn
@@ -102,7 +113,7 @@ body:
       description: |
         Please paste relevant program terminal or journal output here, ideally when generated in debug mode (try setting the `SYSTEMD_LOG_LEVEL=debug` environment variable).
         For very long copy/pasted data consider using a service like https://gist.github.com/. Where copy/paste is not possible (for example early boot or late shutdown), a photo of the screen might do too, but text is always much preferred.
-      placeholder: This will be automatically formatted into code, so no need for backticks.        
+      placeholder: This will be automatically formatted into code, so no need for backticks.
       render: sh
     validations:
       required: false
