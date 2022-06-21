@@ -47,21 +47,22 @@ body:
       label: CPU architecture issue was seen on
       options:
         - aarch64
-        - i686
-        - ppc64le
-        - s390x
-        - x86_64
         - alpha
         - arm
+        - i686
         - ia64
         - loongarch
         - mips
         - parisc
         - ppc (big endian)
         - ppc64 (big endian)
+        - ppc64le
         - riscv64
+        - s390x
         - sparc
         - sparc64
+        - x86_64
+        - other
     validations:
       required: false
 
@@ -72,16 +73,16 @@ body:
       description: Please chose component related to this issue.
       multiple: true
       options:
-        - systemd
-        - resolve
-        - journal
-        - network
-        - systemctl
-        - udev
-        - login
-        - nspawn
         - boot
         - homed
+        - journal
+        - login
+        - network
+        - nspawn
+        - resolve
+        - systemctl
+        - systemd
+        - udev
         - other
     validations:
       required: false

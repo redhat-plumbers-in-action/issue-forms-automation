@@ -14,16 +14,16 @@ body:
       description: Please chose component related to this feature request.
       multiple: true
       options:
-        - systemd
-        - resolve
-        - journal
-        - network
-        - systemctl
-        - udev
-        - login
-        - nspawn
         - boot
         - homed
+        - journal
+        - login
+        - network
+        - nspawn
+        - resolve
+        - systemctl
+        - systemd
+        - udev
         - other
     validations:
       required: false
