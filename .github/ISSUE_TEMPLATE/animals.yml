@@ -1,0 +1,66 @@
+name: Your favorite animals
+description: Pick animals you love
+labels: ["animals 🫶"]
+
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this issue!
+
+  - type: dropdown
+    id: animals
+    attributes:
+      label: Animals
+      description: Please pick all animals you like.
+      multiple: true
+      options:
+        - 'None'
+        - '🦍 Gorilla'
+        - '🐶 Dog'
+        - '🐺 Wolf'
+        - '🦊 Fox'
+        - '🐴 Horse'
+        - '🐓 Rooster'
+        - '🐦 Bird'
+        - '🐧 Penguin'
+        - '🐸 Frog'
+        - '🐬 Dolphin'
+        - '🐟 Fish'
+        - '🐛 Bug'
+        - '🕷️ Spider'
+        - '🐊 Crocodile'
+        - 'other'
+    validations:
+      required: false
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity impact of your decision
+      description: Please choose the severity.
+      multiple: false
+      options:
+        - 'None'
+        - 'Low'
+        - 'Medium'
+        - 'High'
+        - 'Urgent'
+        - 'Other'
+    validations:
+      required: false
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Please choose the priority.
+      multiple: false
+      options:
+        - 'None'
+        - 'Low'
+        - 'Medium'
+        - 'High'
+        - 'Urgent'
+        - 'Other'
+    validations:
+      required: false
