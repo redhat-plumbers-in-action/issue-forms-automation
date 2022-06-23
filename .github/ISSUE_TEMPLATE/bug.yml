@@ -44,7 +44,7 @@ body:
   - type: dropdown
     id: architecture
     attributes:
-      label: CPU architecture issue was seen on
+      label: CPU architectures issue was seen on
       options:
         - aarch64
         - alpha
@@ -70,19 +70,34 @@ body:
     id: component
     attributes:
       label: Component
-      description: Please chose component related to this issue.
+      description: Please chose components related to this issue.
       multiple: true
       options:
-        - 'bootctl | the bootloader itself'
-        - 'systemd'
+        - 'bootctl'
+        - 'homectl'
+        - 'journalctl'
+        - 'loginctl'
+        - 'networkctl'
+        - 'nss-resolve'
+        - 'pam_systemd'
+        - 'pam_systemd_home'
+        - 'resolvectl'
         - 'systemctl'
-        - 'systemd-homed | homectl | pam_systemd_home'
-        - 'systemd-journald | journalctl'
-        - 'systemd-logind | loginctl | pam_systemd'
-        - 'systemd-networkd | networkctl | systemd-networkd-wait-online | .network files'
+        - 'systemd'
+        - 'systemd-boot'
+        - 'systemd-homed'
+        - 'systemd-journald'
+        - 'systemd-logind'
+        - 'systemd-networkd'
+        - 'systemd-networkd-wait-online'
         - 'systemd-nspawn'
-        - 'systemd-resolved | resolvectl | nss-resolve'
-        - 'systemd-udevd | udevadm | udev builtins'
+        - 'systemd-resolved'
+        - 'systemd-stub'
+        - 'systemd-udevd'
+        - 'the bootloader itself'
+        - 'udev builtins'
+        - 'udevadm'
+        - '.network files'
         - 'tests'
         - 'other'
     validations:
