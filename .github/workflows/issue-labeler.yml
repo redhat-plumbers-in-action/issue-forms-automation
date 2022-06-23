@@ -15,14 +15,10 @@ jobs:
 
     strategy:
       matrix:
-        template: [ bug.yml, feature.yml ]
+        template: [ bug.yml, feature.yml, animals.yml ]
 
     steps:
       - uses: actions/checkout@v3
-
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16'
 
       - name: Parse issue form
         uses: stefanbuck/github-issue-parser@v2
@@ -30,11 +26,9 @@ jobs:
         with:
           template-path: .github/ISSUE_TEMPLATE/${{ matrix.template }}
 
-      - name: Set labels based on component field
-        uses: redhat-plumbers-in-action/advanced-issue-labeler@v1
+      - name: Set labels based on policy
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@latest
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
-          section: component
-          block-list: |
-            other
+          template: ${{ matrix.template }}
           token: ${{ secrets.GITHUB_TOKEN }}
