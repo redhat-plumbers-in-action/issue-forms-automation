@@ -2,7 +2,7 @@
 ---
 
 policy:
-  - template: [bug_report.yml, feature_request.yml]
+  - template: [bug.yml, feature.yml]
     section:
       - id: [component]
         block-list: [other]
@@ -179,3 +179,13 @@ policy:
 
           - name: 'Urgent'
             keys: ['Urgent']
+
+  - section:
+      - id: [type]
+        block-list: ['Other']
+        label:
+          - name: 'bug 🐛'
+            keys: ['Bug Report']
+
+          - name: 'RFE 🎁'
+            keys: ['Feature Request']
