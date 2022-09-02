@@ -14,7 +14,7 @@ body:
       description: Please pick all animals you like.
       multiple: true
       options:
-        - 'None'
+        - 'I do not like animals'
         - '🦍 Gorilla'
         - '🐶 Dog'
         - '🐺 Wolf'

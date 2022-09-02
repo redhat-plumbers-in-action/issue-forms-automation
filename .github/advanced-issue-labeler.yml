@@ -145,7 +145,7 @@ policy:
   - template: ['animals.yml']
     section:
       - id: [animals]
-        block-list: ['None', 'Other']
+        block-list: ['I do not like animals', 'Other']
         label:
           - name: 'kind: amphibians'
             keys: ['🐸 Frog']
