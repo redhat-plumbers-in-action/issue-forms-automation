@@ -8,7 +8,7 @@ on:
     types: [ opened ]
 
 jobs:
-  label-component:
+  label-issues-policy:
     runs-on: ubuntu-latest
     permissions:
       issues: write
@@ -31,4 +31,55 @@ jobs:
         with:
           issue-form: ${{ steps.issue-parser.outputs.jsonString }}
           template: ${{ matrix.template }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  label-issues-default-policy:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    strategy:
+      matrix:
+        template: [ default-policy.yml ]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/${{ matrix.template }}
+
+      - name: Set labels based on policy
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@main
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  label-issues-without-policy:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+
+    strategy:
+      matrix:
+        template: [ default.yml ]
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Parse issue form
+        uses: stefanbuck/github-issue-parser@v2
+        id: issue-parser
+        with:
+          template-path: .github/ISSUE_TEMPLATE/${{ matrix.template }}
+
+      - name: Set labels based on policy
+        uses: redhat-plumbers-in-action/advanced-issue-labeler@main
+        with:
+          issue-form: ${{ steps.issue-parser.outputs.jsonString }}
+          section: without-policy
+          block-list: |
+            Other
           token: ${{ secrets.GITHUB_TOKEN }}
