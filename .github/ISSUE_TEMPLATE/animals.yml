@@ -40,7 +40,7 @@ body:
       description: Please choose the severity.
       multiple: false
       options:
-        - 'None'
+        - 'I do not know'
         - 'Low'
         - 'Medium'
         - 'High'
@@ -56,11 +56,19 @@ body:
       description: Please choose the priority.
       multiple: false
       options:
-        - 'None'
+        - 'I do not know'
         - 'Low'
         - 'Medium'
         - 'High'
         - 'Urgent'
         - 'Other'
+    validations:
+      required: false
+
+  - type: textarea
+    id: other
+    attributes:
+      label: Other info
+      description: Write your ideas ...
     validations:
       required: false

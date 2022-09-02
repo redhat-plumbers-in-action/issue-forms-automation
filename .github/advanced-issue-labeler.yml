@@ -169,7 +169,7 @@ policy:
         block-list: []
         label:
           - name: 'Low'
-            keys: ['Low', 'None']
+            keys: ['Low', 'I do not know']
 
           - name: 'Medium'
             keys: ['Medium']
