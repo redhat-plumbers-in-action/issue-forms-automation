@@ -154,10 +154,10 @@ policy:
             keys: ['🐓 Rooster', '🐦 Bird', '🐧 Penguin']
 
           - name: 'kind: fish'
-            keys: ['🐬 Dolphin', '🐟 Fish']
+            keys: ['🐡 Blowfish', '🐟 Fish', '🦈 Shark']
 
           - name: 'kind: mammals'
-            keys: ['🦍 Gorilla', '🐶 Dog', '🐺 Wolf', '🦊 Fox', '🐴 Horse']
+            keys: ['🦍 Gorilla', '🐶 Dog', '🐬 Dolphin', '🐺 Wolf', '🦊 Fox', '🐴 Horse']
 
           - name: 'kind: reptiles'
             keys: ['🐊 Crocodile']
