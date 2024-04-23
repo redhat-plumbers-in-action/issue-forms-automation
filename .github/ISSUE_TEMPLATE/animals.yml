@@ -35,6 +35,18 @@ body:
     validations:
       required: false
 
+  - type: checkboxes
+    id: food
+    attributes:
+      label: What kinds of food do you like?
+      description: You may select more than one.
+      options:
+        - label: '🍎 apple'
+        - label: '🥒 cucumber'
+        - label: '🍊 orange'
+        - label: '🥔 potato'
+        - label: '🍅 tomato'
+
   - type: dropdown
     id: severity
     attributes:
