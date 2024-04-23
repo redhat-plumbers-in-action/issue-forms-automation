@@ -165,6 +165,15 @@ policy:
           - name: 'invertebrates'
             keys: ['🐛 Bug', '🕷️ Spider']
 
+      - id: ['food']
+        block-list: ['I don't like food', 'Other']
+        label:
+          - name: 'food: fruits'
+            keys: ['🍎 apple', '🥒 cucumber', '🍊 orange', '🍅 tomato']
+
+          - name: 'food: vegetables'
+            keys: ['🥔 potato']
+
       - id: ['severity', 'priority']
         block-list: []
         label:
