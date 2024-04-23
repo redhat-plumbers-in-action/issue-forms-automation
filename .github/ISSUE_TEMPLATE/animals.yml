@@ -46,6 +46,8 @@ body:
         - label: '🍊 orange'
         - label: '🥔 potato'
         - label: '🍅 tomato'
+        - label: 'Other'
+        - label: 'I don't like food'
 
   - type: dropdown
     id: severity
