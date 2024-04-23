@@ -166,7 +166,7 @@ policy:
             keys: ['🐛 Bug', '🕷️ Spider']
 
       - id: ['food']
-        block-list: ['I don't like food', 'Other']
+        block-list: ["I don't like food", 'Other']
         label:
           - name: 'food: fruits'
             keys: ['🍎 apple', '🥒 cucumber', '🍊 orange', '🍅 tomato']
